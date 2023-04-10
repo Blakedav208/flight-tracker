@@ -22,14 +22,20 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [".js",".jsx",".json"],
+    extensions: ['.js','.jsx','.json'],
   },
   module: {
     rules: [{
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx)$/, 
         exclude: /node_modules/,
-        use: "babel-loader",
+        use: ['babel-loader']
     },
+    {
+        test: /\.(css)$/, 
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader']
+    },
+   
     ],
   }, 
 };
